@@ -20,12 +20,12 @@
   width: 250px;
 }
 
-.ex-3-square {
+.ex-3-square{
   width: 100px;
   height: 100px;
   background: red;
   color: inherit;
-  transition: border 2s ease;
+  transition: border-radius 2s;
 }
 .ex-3-square:hover{
   border-radius: 100%;
@@ -58,20 +58,54 @@
 .ex-5-square:active{
   transform: scale(0.5);
 }
+
 .ex-6-img, .ex-7-img, .ex-8-img {
-    width: 500px;
+  width: 500px;
+  transition: 2s ease;
+}
+.ex-6-img:hover{
+  transition: none;
+  filter: grayscale(1);
+}
+.ex-7-img:hover{
+  filter: grayscale(1);
+}
+.ex-8-img:hover{
+  border-radius: 10px;
+  filter: sepia(1);
 }
 
 .ex-9-img {
-    margin: 50px 100px;
-    width: 400px;
+  margin: 50px 100px;
+  width: 400px;
+  transition: transform 4s;
 }
+.ex-9-img:hover{
+  border-radius: 5px;
+  filter: brightness(3);
+  transform: matrix(2, 0, 0, 2, 200, 0);
+}
+
 .ex-10-icon {
-    font-size: 60px;
+  font-size: 60px;
+  animation-name: giro;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
+@keyframes giro {
+  0%{ transform: rotate(0deg);}
+  100%{ transform: rotate(360deg);}
+}
+
 .ex-11-icon {
-    font-size: 60px;
+  font-size: 60px;
+  transition: transform 5s ease;
 }
+.ex-11-icon:hover{
+  transform: rotate(225deg);
+}
+
 .ex-12-button, .ex-13-button {
     position: relative;
     display: block;
@@ -94,6 +128,10 @@
     color: inherit;
     width: 60px;
     height: 20px;
+    animation-name: white-bar;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 .ex-12-bottom-white, .ex-13-bottom-white {
     position: absolute;
@@ -103,4 +141,9 @@
     color: inherit;
     width: 60px;
     height: 20px;
+}
+
+@keyframes white-bar{
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(180deg);}
 }
